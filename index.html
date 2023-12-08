@@ -1,0 +1,82 @@
+<!DOCTYPE html>.
+<html lang="en">
+<head>
+    <style>
+		/* Les descendants de rang impair sont stylés avec une couleur     */
+		tbody:nth-child(odd)  { background-color : #CED4E5; align-items: center;}
+		/* Les descendants de rang pair sont stylés avec une autre couleur */
+		tbody:nth-child(even) { background-color : #E8EBF5; }
+		th { background-color : #c0c1c2; padding:0.7em; }
+		td { padding:0.5em; }
+	</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/project-common-css.css">
+    <link rel="stylesheet" href="css/speed-calculator.css">
+    <title>EVALUATEUR DE CONSOMMATION</title>
+</head>
+<body>
+    <div class="tool-container">
+        <h1>EVALUATEUR DE CONSOMMATION</h1>
+        <div class="tool-container-feild-group">
+            <div id="speedInput" class="tool-container-feild">
+                <div class="tool-input-group">
+                    <label for="speed" class="tool-input-label">Perte de paquets(P):</label>
+                    <input placeholder="(ko/s)" type="number"  min ="0" id="Speed" max="100" class="tool-input-feild">
+                </div>                
+                
+                <!-- <div class="tool-input-group">
+                    <label for="distance" class="tool-input-label">Consommation(C):</label>
+                    <input placeholder="(Ko)"  type="number"  min="0" id="Distance" class="tool-input-feild">
+                </div> -->
+                
+                <!-- <div class="tool-input-group">
+                    <label for="time" class="tool-input-label">Temps(t):</label>
+                    <input placeholder="(s)" type="number"  min ="0" id="Time" max="100" class="tool-input-feild">
+                </div>
+               -->
+
+                <div class="tool-input-group">
+                    <button onclick="ResetSpeedCalculator()" class="tool-btn tool-btn-reset">Reset</button>
+                    <button onclick="CalculateSpeed()" class="tool-btn tool-btn-calculate">Calculer</button>
+                </div>    
+            </div>
+
+            <div  id="SpeedOutput" class="tool-container-feild">              
+                <div id="OutputInfo" class="tool-output-information tool-output-box">
+                    <h2>Informations de base</h2>
+                    <!-- <img src="https://www.gstatic.com/education/formulas2/472522532/en/speed.svg" alt=""> -->
+                    <ul>
+                        <li><b>Consommation</b> en Kilo-octets(Ko).</li>
+                        <li><b>Temps</b> en secondes (s).</li>
+                        <li><b>Perte</b> en Ko/s.</li>
+                    </ul>
+                </div>
+               
+                <div id="OutputResult" class="tool-output-box">
+                    <h2>Résultat</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Volume en 1 minute</th>
+                                <th>Volume en 1 heure</th>
+                                <th>Volume en 12 heures</th>
+                              </tr>
+                        </thead>
+                        <tbody align="center">
+                            <tr>
+                                <td id="ShowDistance">Consommation = 00Ko</td>
+                                <td id="ShowDistance_h">Consommation = 00Ko</td>
+                                <td id="ShowDistance_12h">Consommation = 00Ko</td>
+                              </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>            
+        </div>       
+    </div>
+    <script src="js/project-common-js.js"></script>
+    <script src="js/speed-calculator-js.js"></script>  
+</body>
+</html>
